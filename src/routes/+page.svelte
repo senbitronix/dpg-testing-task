@@ -68,13 +68,12 @@
 {#await loadData()}
 	<Loader />
 {:then posts}
-	{#if loadingFromCache}
-		<NotificationComponent>
-			Загрузка данных из кеша
-		</NotificationComponent>
-  {/if}
-	<Feed {posts} />
 	{#if posts.length > 0}
+		{#if loadingFromCache}
+			<NotificationComponent>
+				Загрузка данных из кеша
+			</NotificationComponent>
+		{/if}
     <Feed {posts} />
   {:else}
     <p>Нет данных для отображения.</p>

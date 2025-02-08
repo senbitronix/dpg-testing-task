@@ -71,12 +71,12 @@
 	{#if posts.length > 0}
 		{#if loadingFromCache}
 			<NotificationComponent>
-				Загрузка данных из кеша
+				Посты загружены из кеша
 			</NotificationComponent>
 		{/if}
     <Feed {posts} />
   {:else}
-    <p>Нет данных для отображения.</p>
+    <p>Нет данных для отображения</p>
   {/if}
 {:catch e}
 	<ErrorComponent>
